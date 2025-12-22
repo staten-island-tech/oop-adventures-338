@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 class food:
     bandage = {
         "name": "Bandage",
@@ -81,6 +82,8 @@ class food:
         "description": "Like a hot dog, but with little cat ears on the end.",
         "healing": 21}
 =======
+=======
+>>>>>>> Stashed changes
 food={
     "bandage" : {
         "name": "Bandage",
@@ -278,5 +281,9 @@ armor={
         "name": "The Locket",
         "description": "You can feel it beating.",
         "df": 99},
+<<<<<<< Updated upstream
+}
+>>>>>>> Stashed changes
+=======
 }
 >>>>>>> Stashed changes
