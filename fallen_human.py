@@ -4,6 +4,7 @@ class Chara:
         if self.name=="CHARA":
             print("The true name.")
         self.maxhp=20
+        self.hp=20
         self.xp=0
         self.love=1
         self.at=0
@@ -14,6 +15,8 @@ class Chara:
         print(f"{self.name} has taken {dmg} damage.")
     def hpgain(self,heal):
         self.hp+=heal
+        if self.hp>self.maxhp:
+            self.hp=self.maxhp
         print(f"{self.name} has recover {heal} health.")
     def xpgain(self,exp):
         self.xp+=exp
