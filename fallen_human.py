@@ -3,6 +3,8 @@ class Chara:
         self.name=name
         if self.name=="CHARA":
             print("The true name.")
+        elif self.name=="GASTER":
+            breakpoint
         self.maxhp=20
         self.hp=20
         self.xp=0
