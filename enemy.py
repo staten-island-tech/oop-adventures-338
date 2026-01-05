@@ -1,0 +1,79 @@
+from fallen_human import Chara
+class enemies:
+    def __init__(self,hp,at,df,xpamt,g):
+        self.hp=hp
+        self.at=at
+        self.df=df
+        self.xpamt=xpamt
+        self.g=g
+    def getdamaged():
+        self.hp-=Chara.at
+    def attackchara():
+        Chara.hp-=self.at
+ruinsenemies=[
+    "FirstFroggit":{
+        "hp":20,
+        "at":4,
+        "df":1,
+        "xpamt":10,
+        "g":20,
+    },
+    "OtherFroggits":{
+        "hp":30,
+        "at":4,
+        "df":4,
+        "xpamt":3,
+        "g":2,
+    },
+    "Whimsun":{
+        "hp":10,
+        "at":4,
+        "df":0,
+        "xpamt":2,
+        "g":2,
+    },
+    "Moldsmal":{
+        "hp":50,
+        "at":4,
+        "df":0,
+        "xpamt":3,
+        "g":3,
+    },
+    "Vegetoid":{
+        "hp":72,
+        "at":5,
+        "df":0,
+        "xpamt":6,
+        "g":1,
+    },
+    "Migosp":{
+        "hp":40,
+        "at":5,
+        "df":4,
+        "xpamt":5,
+        "g":2,
+    },
+    "Loox":{
+        "hp":50,
+        "at":5,
+        "df":4,
+        "xpamt":7,
+        "g":5,
+    },
+    "Napstablook":{
+    "hp":88,
+    "at":5,
+    "df":4,
+    "xpamt":0,
+    "g":0,
+    },
+    "Toriel":{
+        "hp":440,
+        "at":6,
+        "df":-9999,
+        "xpamt":150,
+        "g":0,
+    }
+]
+
+
