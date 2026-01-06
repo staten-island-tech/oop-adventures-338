@@ -72,9 +72,9 @@ class Chara:
             self.love=20
         if self.love==20:
             self.maxhp=99
-            self.at=999
-            self.df=round((self.love-1)/4)
+            self.at=999999999999999999999999999999999999999999999
         else:
             self.maxhp=16+(4*self.love)
             self.at=-2+(2*self.love)
             self.df=round((self.love-1)/4)
+“round((Weapon ATK + ATK - Monster DEF + r) * b)
