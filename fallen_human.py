@@ -1,10 +1,6 @@
 class Chara:
     def __init__(self,name):
         self.name=name
-        if self.name=="CHARA":
-            print("The true name.")
-        elif self.name=="GASTER":
-            breakpoint
         self.maxhp=20
         self.hp=20
         self.xp=0
@@ -12,6 +8,13 @@ class Chara:
         self.at=0
         self.df=0
         self.G=0
+    def menu(self):
+        print(self.name)
+        print(f"{self.hp}/{self.maxhp} HP")
+        print(f"LV: {self.love}")
+        print(f"XP: {self.xp}")
+        print(f"{self.G} G")
+        print(f"AT: {self.at} DF: {self.df}")
     def hplost(self,dmg):
         self.hp-=dmg
         print(f"{self.name} has taken {dmg} damage.")
