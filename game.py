@@ -9,6 +9,17 @@ from enemy import WaterfallEnemies
 from enemy import HotlandEnemies
 from enemy import CoreEnemies
 from enemy import NewHomeEnemy
+
+class Actions:
+    def __init__(self,name):
+        self.equipw=food["stick"]["at"]
+        self.equipa=weapons["bandage"]["df"]
+        self.items=[""]
+        self.damage=0
+    def fight(self,weapon,opponent):
+        r=random.randint(0,2)
+        self.damage=round((weapon+Chara.at-opponent+r)*r)
+
 mysteryman=False
 turn=0
 ruinsencounter=0
