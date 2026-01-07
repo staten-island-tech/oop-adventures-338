@@ -77,4 +77,3 @@ class Chara:
             self.maxhp=16+(4*self.love)
             self.at=-2+(2*self.love)
             self.df=round((self.love-1)/4)
-“round((Weapon ATK + ATK - Monster DEF + r) * b)
