@@ -1,16 +1,16 @@
-from fallen_human import Chara
-class enemies:
-    def __init__(self,hp,at,df,xpamt,g):
-        self.hp=hp
-        self.at=at
-        self.df=df
-        self.xpamt=xpamt
-        self.g=g
-    def getdamaged():
-        self.hp-=Chara.at
-    def attackchara():
-        Chara.hp-=self.at
-ruinsenemies=[
+# from fallen_human import Chara
+# class enemies:
+#     def __init__(self,hp,at,df,xpamt,g):
+#         self.hp=hp
+#         self.at=at
+#         self.df=df
+#         self.xpamt=xpamt
+#         self.g=g
+#     def getdamaged():
+#         self.hp-=Chara.at
+#     def attackchara():
+#         Chara.hp-=self.at
+RuinsEnemies={
     "FirstFroggit":{
         "hp":20,
         "at":4,
@@ -74,6 +74,289 @@ ruinsenemies=[
         "xpamt":150,
         "g":0,
     }
-]
-
-
+}
+SnowdinEnemies={
+    "Snowdrake":{
+        "hp":74,
+        "at":6,
+        "df":2,
+        "xpamt":22,
+        "g":18,
+    },
+    "Chilldrake":{
+        "hp":74,
+        "at":6,
+        "df":2,
+        "xpamt":22,
+        "g":18,
+    },
+    "Ice Cap":{
+        "hp":48,
+        "at":6,
+        "df":0,
+        "xpamt":17,
+        "g":17,
+    },
+    "Doggo":{
+        "hp":70,
+        "at":6,
+        "df":1,
+        "xpamt":30,
+        "g":30,
+    },
+    "Lesser Dog":{
+        "hp":60,
+        "at":6,
+        "df":0,
+        "xpamt":18,
+        "g":15,
+    },
+    "Jerry":{
+        "hp":80,
+        "at":1,
+        "df":8,
+        "xpamt":1,
+        "g":55,
+    },
+    "Dogamy and Dogaressa":{
+        "hp":216,
+        "at":6,
+        "df":4,
+        "xpamt":60,
+        "g":50,
+    },
+    "Gyftrot":{
+        "hp":114,
+        "at":7,
+        "df":3,
+        "xpamt":35,
+        "g":30,
+    },
+    "Glyde":{
+        "hp":220,
+        "at":9,
+        "df":-20,
+        "xpamt":100,
+        "g":140,
+    },
+    "Greater Dog":{
+        "hp":105,
+        "at":6,
+        "df":4,
+        "xpamt":80,
+        "g":60,
+    },
+    "papaya man":{
+        "hp":680,
+        "at":3,
+        "df":-20000,
+        "xpamt":200,
+        "g":0,
+    }
+}
+WaterfallEnemies={
+    "Aaron":{
+        "hp":98,
+        "at":7,
+        "df":2,
+        "xpamt":52,
+        "g":25,
+    },
+    "Woshua":{
+        "hp":70,
+        "at":7,
+        "df":1,
+        "xpamt":52,
+        "g":25,
+    },
+    "Moldsmal":{
+        "hp":50,
+        "at":7,
+        "df":0,
+        "xpamt":3,
+        "g":1,
+    },
+    "Moldbygg":{
+        "hp":70,
+        "at":7,
+        "df":4,
+        "xpamt":46,
+        "g":30,
+    },
+    "Monster Kid":{
+        "hp":100,
+        "at":11,
+        "df":-200,
+        "xpamt":0,
+        "g":0,
+    },
+    "Shyren":{
+        "hp":66,
+        "at":7,
+        "df":2,
+        "xpamt":52,
+        "g":25,
+    },
+    "Mad Dummy":{
+        "hp":300,
+        "at":7,
+        "df":-40,
+        "xpamt":0,
+        "g":0,
+    },
+    "Temmie":{
+        "hp":5,
+        "at":7,
+        "df":-20,
+        "xpamt":40,
+        "g":50,
+    },
+    "fish":{
+        "hp":23000,
+        "at":12,
+        "df":5,
+        "xpamt":1500,
+        "g":0,
+    },
+}
+HotlandEnemies={
+    "Vulkin":{
+        "hp":20,
+        "at":8,
+        "df":-10,
+        "xpamt":70,
+        "g":50,
+    },
+    "Tsunderplane":{
+        "hp":80,
+        "at":8,
+        "df":6,
+        "xpamt":95,
+        "g":45,
+    },
+    "Pyrope":{
+        "hp":110,
+        "at":8,
+        "df":1,
+        "xpamt":80,
+        "g":40,
+    },
+    "Royal Guards":{
+        "hp":300,
+        "at":8,
+        "df":4,
+        "xpamt":220,
+        "g":110,
+    },
+    "spider":{
+        "hp":1250,
+        "at":8,
+        "df":0,
+        "xpamt":300,
+        "g":"a little",
+    },
+}
+CoreEnemies={
+    "Madjick":{
+        "hp":190,
+        "at":8,
+        "df":-1,
+        "xpamt":150,
+        "g":120,
+    },
+    "Knight Knight":{
+        "hp":230,
+        "at":8,
+        "df":2,
+        "xpamt":180,
+        "g":150,
+    },
+    "Final Froggit":{
+        "hp":100,
+        "at":8,
+        "df":0,
+        "xpamt":120,
+        "g":80,
+    },
+    "Whimsalot":{
+        "hp":95,
+        "at":8,
+        "df":-3,
+        "xpamt":110,
+        "g":80,
+    },
+    "Astigmatism":{
+        "hp":120,
+        "at":8,
+        "df":-2,
+        "xpamt":130,
+        "g":85,
+    },
+    "mtt neo":{
+        "hp":30000,
+        "at":10,
+        "df":-40000,
+        "xpamt":50000,
+        "g":0,
+    },
+}
+NewHomeEnemies={
+    "brother of papaya":{
+        "hp":1,
+        "at":1,
+        "df":1,
+        "xpamt":89358357978335,
+        "g":0,
+    },
+    "asgore":{
+        "hp":900,
+        "at":10,
+        "df":-30,
+        "xpamt":0,
+        "g":0,
+    },
+}
+YellowBosses={
+    "Ceroba Ketsukane":{
+        "hp":1000,
+        "at":13,
+        "df":23,
+        "xpamt":1500,
+        "g":50,
+    },
+    "Martlet (Snowdin)":{
+        "hp":750,
+        "at":12,
+        "df":8,
+        "xpamt":0,
+        "g":0,
+    },
+    "Martlet (Final Battle)":{
+        "hp":750,
+        "at":25,
+        "df":40,
+        "xpamt":200,
+        "g":0,
+    },
+    "Axis":{
+        "hp":800,
+        "at":19,
+        "df":15,
+        "xpamt":200,
+        "g":0,
+    },
+    "Dalv":{
+        "hp":240,
+        "at":6,
+        "df":4,
+        "xpamt":120,
+        "g":15,
+    },
+    "Decibat":{
+        "hp":80,
+        "at":4,
+        "df":5,
+        "xpamt":7,
+        "g":8,
+    },
+}
