@@ -1,16 +1,21 @@
 from fallen_human import Chara
+import random
 class enemies:
     def __init__(self,name,hp,at,df,xpamt,g):
+        self.name=name
         self.hp=hp
         self.at=at
         self.df=df
         self.xpamt=xpamt
         self.g=g
-        self.name=name
-    def getdamaged():
-        self.hp-=Chara.at
-    def attackchara():
-        Chara.hp-=self.at
+    def hplost(self,dmg):
+        self.hp-=dmg
+        print(f"{self.name} has taken {dmg} damage.")
+    def fight(self,opponent):
+        r=random.randint(0,2)
+        self.damage=round((self.at-opponent+r)*r)
+    def check(self):
+        print(f"{self.name}: {self.at} Attack {self.df} Defense")
 RuinsEnemies={
     "FirstFroggit":{
         "name":"Froggit",
