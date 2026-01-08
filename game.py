@@ -3,12 +3,14 @@ from fallen_human import Chara
 from item import food
 from item import weapons
 from item import armor
+from enemy import Enemies
 from enemy import RuinsEnemies
 from enemy import SnowdinEnemies
 from enemy import WaterfallEnemies
 from enemy import HotlandEnemies
 from enemy import CoreEnemies
-from enemy import NewHomeEnemy
+from enemy import NewHomeEnemies
+from enemy import YellowBosses
 
 class Actions:
     def __init__(self,name):
@@ -16,9 +18,6 @@ class Actions:
         self.equipa=weapons["bandage"]["df"]
         self.items=[""]
         self.damage=0
-    def fight(self,weapon,opponent):
-        r=random.randint(0,2)
-        self.damage=round((weapon+Chara.at-opponent+r)*r)
 
 mysteryman=False
 turn=0
@@ -46,11 +45,18 @@ while mysteryman!=True:
        mysteryman=True
 human=Chara(name)
 while ruinsencounter<21:
-    random.randint(0,5)
+    r=random.randint(1,6)
     enemyalive=True
     while enemyalive==True:
-        print("")
-        if hp<=0:
+        Encounter=Enemies(RuinsEnemies[r]["name"],RuinsEnemies[r]["hp"],RuinsEnemies[r]["at"],RuinsEnemies[r]["df"],RuinsEnemies[r]["xpamount"],RuinsEnemies[r]["g"])
+        action=(input("Fight     Check     Items       Flee ")).upper()
+        if action=="FIGHT":
+            dmg=Chara.fight(human)
+            Enemies.hplost(Encounter,dmg)
+            print(f"You dealt {dmg} damage. ")
+        elif action=="CHECK":
+            Enemies.check(Encounter)
+        if Encounter.hp<=0:
             enemyalive=False
     ruinsencounter+=1
 
