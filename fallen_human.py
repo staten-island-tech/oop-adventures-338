@@ -1,3 +1,4 @@
+import random
 class Chara:
     def __init__(self,name):
         self.name=name
@@ -25,6 +26,9 @@ class Chara:
         if self.hp>self.maxhp:
             self.hp=self.maxhp
         print(f"{self.name} has recover {heal} health.")
+    def fight(self,weapon,opponent):
+        r=random.randint(0,2)
+        self.damage=round((weapon+self.at-opponent+r)*r)
     def xpgain(self,exp):
         self.xp+=exp
     def G(self,gold):
