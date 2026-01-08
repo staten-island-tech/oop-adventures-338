@@ -1,17 +1,19 @@
-# from fallen_human import Chara
-# class enemies:
-#     def __init__(self,hp,at,df,xpamt,g):
-#         self.hp=hp
-#         self.at=at
-#         self.df=df
-#         self.xpamt=xpamt
-#         self.g=g
-#     def getdamaged():
-#         self.hp-=Chara.at
-#     def attackchara():
-#         Chara.hp-=self.at
+from fallen_human import Chara
+class enemies:
+    def __init__(self,name,hp,at,df,xpamt,g):
+        self.hp=hp
+        self.at=at
+        self.df=df
+        self.xpamt=xpamt
+        self.g=g
+        self.name=name
+    def getdamaged():
+        self.hp-=Chara.at
+    def attackchara():
+        Chara.hp-=self.at
 RuinsEnemies={
     "FirstFroggit":{
+        "name":"Froggit",
         "hp":20,
         "at":4,
         "df":1,
@@ -19,6 +21,7 @@ RuinsEnemies={
         "g":20,
     },
     "OtherFroggits":{
+        "name":"Froggit",
         "hp":30,
         "at":4,
         "df":4,
@@ -26,6 +29,7 @@ RuinsEnemies={
         "g":2,
     },
     "Whimsun":{
+        "name":"Whimsun",
         "hp":10,
         "at":4,
         "df":0,
@@ -33,6 +37,7 @@ RuinsEnemies={
         "g":2,
     },
     "Moldsmal":{
+        "name":"Moldsmal",
         "hp":50,
         "at":4,
         "df":0,
@@ -40,6 +45,7 @@ RuinsEnemies={
         "g":3,
     },
     "Vegetoid":{
+        "name":"Vegetoid",
         "hp":72,
         "at":5,
         "df":0,
@@ -47,6 +53,7 @@ RuinsEnemies={
         "g":1,
     },
     "Migosp":{
+        "name":"Migosp",
         "hp":40,
         "at":5,
         "df":4,
@@ -54,6 +61,7 @@ RuinsEnemies={
         "g":2,
     },
     "Loox":{
+        "name":"Loox",
         "hp":50,
         "at":5,
         "df":4,
@@ -61,13 +69,15 @@ RuinsEnemies={
         "g":5,
     },
     "Napstablook":{
-    "hp":88,
-    "at":5,
-    "df":4,
-    "xpamt":0,
-    "g":0,
+        "name":"Napstablook",
+        "hp":88,
+        "at":5,
+        "df":4,
+        "xpamt":0,
+        "g":0,
     },
     "Toriel":{
+        "name":"Toriel",
         "hp":440,
         "at":6,
         "df":-9999,
@@ -77,6 +87,7 @@ RuinsEnemies={
 }
 SnowdinEnemies={
     "Snowdrake":{
+        "name":"Snowdrake",
         "hp":74,
         "at":6,
         "df":2,
@@ -84,6 +95,7 @@ SnowdinEnemies={
         "g":18,
     },
     "Chilldrake":{
+        "name":"Chilldrake",
         "hp":74,
         "at":6,
         "df":2,
@@ -91,6 +103,7 @@ SnowdinEnemies={
         "g":18,
     },
     "Ice Cap":{
+        "name":"Ice Cap",
         "hp":48,
         "at":6,
         "df":0,
@@ -98,6 +111,7 @@ SnowdinEnemies={
         "g":17,
     },
     "Doggo":{
+        "name":"Doggo",
         "hp":70,
         "at":6,
         "df":1,
@@ -105,6 +119,7 @@ SnowdinEnemies={
         "g":30,
     },
     "Lesser Dog":{
+        "name":"Lesser Dog",
         "hp":60,
         "at":6,
         "df":0,
@@ -112,6 +127,7 @@ SnowdinEnemies={
         "g":15,
     },
     "Jerry":{
+        "name":"Jerry",
         "hp":80,
         "at":1,
         "df":8,
@@ -119,6 +135,7 @@ SnowdinEnemies={
         "g":55,
     },
     "Dogamy and Dogaressa":{
+        "name":"Dogamy and Dogaressa",
         "hp":216,
         "at":6,
         "df":4,
@@ -126,6 +143,7 @@ SnowdinEnemies={
         "g":50,
     },
     "Gyftrot":{
+        "name":"Gyftrot",
         "hp":114,
         "at":7,
         "df":3,
@@ -133,6 +151,7 @@ SnowdinEnemies={
         "g":30,
     },
     "Glyde":{
+        "name":"Glyde",
         "hp":220,
         "at":9,
         "df":-20,
@@ -140,6 +159,7 @@ SnowdinEnemies={
         "g":140,
     },
     "Greater Dog":{
+        "name":"Greater Dog",
         "hp":105,
         "at":6,
         "df":4,
@@ -147,6 +167,7 @@ SnowdinEnemies={
         "g":60,
     },
     "papaya man":{
+        "name":"Papyrus",
         "hp":680,
         "at":3,
         "df":-20000,
@@ -156,6 +177,7 @@ SnowdinEnemies={
 }
 WaterfallEnemies={
     "Aaron":{
+        "name":"Aaron",
         "hp":98,
         "at":7,
         "df":2,
@@ -163,6 +185,7 @@ WaterfallEnemies={
         "g":25,
     },
     "Woshua":{
+        "name":"Woshua",
         "hp":70,
         "at":7,
         "df":1,
@@ -170,6 +193,7 @@ WaterfallEnemies={
         "g":25,
     },
     "Moldsmal":{
+        "name":"Moldsmal",
         "hp":50,
         "at":7,
         "df":0,
@@ -177,6 +201,7 @@ WaterfallEnemies={
         "g":1,
     },
     "Moldbygg":{
+        "name":"Moldbygg",
         "hp":70,
         "at":7,
         "df":4,
@@ -184,6 +209,7 @@ WaterfallEnemies={
         "g":30,
     },
     "Monster Kid":{
+        "name":"Monster Kid",
         "hp":100,
         "at":11,
         "df":-200,
@@ -191,6 +217,7 @@ WaterfallEnemies={
         "g":0,
     },
     "Shyren":{
+        "name":"Shyren",
         "hp":66,
         "at":7,
         "df":2,
@@ -198,20 +225,15 @@ WaterfallEnemies={
         "g":25,
     },
     "Mad Dummy":{
+        "name":"Mad Dummy",
         "hp":300,
         "at":7,
         "df":-40,
         "xpamt":0,
         "g":0,
     },
-    "Temmie":{
-        "hp":5,
-        "at":7,
-        "df":-20,
-        "xpamt":40,
-        "g":50,
-    },
     "fish":{
+        "name":"Undyne",
         "hp":23000,
         "at":12,
         "df":5,
@@ -221,6 +243,7 @@ WaterfallEnemies={
 }
 HotlandEnemies={
     "Vulkin":{
+        "name":"Vulkin",
         "hp":20,
         "at":8,
         "df":-10,
@@ -228,6 +251,7 @@ HotlandEnemies={
         "g":50,
     },
     "Tsunderplane":{
+        "name":"Tsunderplane",
         "hp":80,
         "at":8,
         "df":6,
@@ -235,6 +259,7 @@ HotlandEnemies={
         "g":45,
     },
     "Pyrope":{
+        "name":"Pyrope",
         "hp":110,
         "at":8,
         "df":1,
@@ -242,6 +267,7 @@ HotlandEnemies={
         "g":40,
     },
     "Royal Guards":{
+        "name":"Royal Guards",
         "hp":300,
         "at":8,
         "df":4,
@@ -249,6 +275,7 @@ HotlandEnemies={
         "g":110,
     },
     "spider":{
+        "name":"Muffet",
         "hp":1250,
         "at":8,
         "df":0,
@@ -258,6 +285,7 @@ HotlandEnemies={
 }
 CoreEnemies={
     "Madjick":{
+        "name":"Madjick",
         "hp":190,
         "at":8,
         "df":-1,
@@ -265,6 +293,7 @@ CoreEnemies={
         "g":120,
     },
     "Knight Knight":{
+        "name":"Knight Knight",
         "hp":230,
         "at":8,
         "df":2,
@@ -272,6 +301,7 @@ CoreEnemies={
         "g":150,
     },
     "Final Froggit":{
+        "name":"Final Froggit",
         "hp":100,
         "at":8,
         "df":0,
@@ -279,6 +309,7 @@ CoreEnemies={
         "g":80,
     },
     "Whimsalot":{
+        "name":"Whimsalot",
         "hp":95,
         "at":8,
         "df":-3,
@@ -286,6 +317,7 @@ CoreEnemies={
         "g":80,
     },
     "Astigmatism":{
+        "name":"Astigmatism",
         "hp":120,
         "at":8,
         "df":-2,
@@ -293,6 +325,7 @@ CoreEnemies={
         "g":85,
     },
     "mtt neo":{
+        "name":"Mettaton NEO",
         "hp":30000,
         "at":10,
         "df":-40000,
@@ -302,6 +335,7 @@ CoreEnemies={
 }
 NewHomeEnemies={
     "brother of papaya":{
+        "name":"Sans",
         "hp":1,
         "at":1,
         "df":1,
@@ -309,6 +343,7 @@ NewHomeEnemies={
         "g":0,
     },
     "asgore":{
+        "name":"Asgore",
         "hp":900,
         "at":10,
         "df":-30,
@@ -318,6 +353,7 @@ NewHomeEnemies={
 }
 YellowBosses={
     "Ceroba Ketsukane":{
+        "name":"Ceroba Ketsukane",
         "hp":1000,
         "at":13,
         "df":23,
@@ -325,6 +361,7 @@ YellowBosses={
         "g":50,
     },
     "Martlet (Snowdin)":{
+        "name":"Martlet",
         "hp":750,
         "at":12,
         "df":8,
@@ -332,6 +369,7 @@ YellowBosses={
         "g":0,
     },
     "Martlet (Final Battle)":{
+        "name":"Martlet",
         "hp":750,
         "at":25,
         "df":40,
@@ -339,6 +377,7 @@ YellowBosses={
         "g":0,
     },
     "Axis":{
+        "name":"Axis",
         "hp":800,
         "at":19,
         "df":15,
@@ -346,6 +385,7 @@ YellowBosses={
         "g":0,
     },
     "Dalv":{
+        "name":"Dalv",
         "hp":240,
         "at":6,
         "df":4,
@@ -353,6 +393,7 @@ YellowBosses={
         "g":15,
     },
     "Decibat":{
+        "name":"Decibat",
         "hp":80,
         "at":4,
         "df":5,
