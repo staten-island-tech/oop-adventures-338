@@ -49,13 +49,21 @@ while ruinsencounter<21:
     enemyalive=True
     while enemyalive==True:
         Encounter=Enemies(RuinsEnemies[r]["name"],RuinsEnemies[r]["hp"],RuinsEnemies[r]["at"],RuinsEnemies[r]["df"],RuinsEnemies[r]["xpamount"],RuinsEnemies[r]["g"])
-        action=(input("Fight     Check     Items       Flee ")).upper()
-        if action=="FIGHT":
-            dmg=Chara.fight(human)
-            Enemies.hplost(Encounter,dmg)
-            print(f"You dealt {dmg} damage. ")
-        elif action=="CHECK":
-            Enemies.check(Encounter)
+        action=(input("Fight     Check     Items ")).upper()
+        turn=True
+        while turn==True:
+            if action=="FIGHT":
+                dmg=Chara.fight(human)
+                Enemies.hplost(Encounter,dmg)
+                print(f"You dealt {dmg} damage. ")
+                turn=False
+            elif action=="CHECK":
+                Enemies.check(Encounter)
+                turn=False
+            elif action=="Items":
+                turn=False
+            else:
+                turn=True
         if Encounter.hp<=0:
             enemyalive=False
     ruinsencounter+=1
