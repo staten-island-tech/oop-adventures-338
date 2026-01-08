@@ -1,6 +1,5 @@
-from fallen_human import Chara
 import random
-class enemies:
+class Enemies:
     def __init__(self,name,hp,at,df,xpamt,g):
         self.name=name
         self.hp=hp
