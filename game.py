@@ -11,6 +11,13 @@ from enemy import HotlandEnemies
 from enemy import CoreEnemies
 from enemy import NewHomeEnemies
 from enemy import YellowBosses
+from enemy import RuinsEnemiesList
+from enemy import SnowdinEnemiesList
+from enemy import WaterfallEnemiesList
+from enemy import HotlandEnemiesList
+from enemy import CoreEnemiesList
+from enemy import NewHomeEnemiesList
+from enemy import YellowBossesList
 
 class Actions:
     def __init__(self,name):
@@ -48,19 +55,20 @@ while ruinsencounter<21:
     r=random.randint(1,6)
     enemyalive=True
     while enemyalive==True:
-        Encounter=Enemies(RuinsEnemies[r]["name"],RuinsEnemies[r]["hp"],RuinsEnemies[r]["at"],RuinsEnemies[r]["df"],RuinsEnemies[r]["xpamount"],RuinsEnemies[r]["g"])
+        Encounter=Enemies(RuinsEnemies[RuinsEnemiesList[r]]["name"],RuinsEnemies[RuinsEnemiesList[r]]["hp"],RuinsEnemies[RuinsEnemiesList[r]]["at"],RuinsEnemies[RuinsEnemiesList[r]]["df"],RuinsEnemies[RuinsEnemiesList[r]]["xpamt"],RuinsEnemies[RuinsEnemiesList[r]]["g"])
+        print(RuinsEnemies[RuinsEnemiesList[r]]["name"])
         action=(input("Fight     Check     Items ")).upper()
         turn=True
         while turn==True:
             if action=="FIGHT":
-                dmg=Chara.fight(human)
+                dmg=Chara.fight(human,weapons["stick"]["at"],Encounter.df)
                 Enemies.hplost(Encounter,dmg)
                 print(f"You dealt {dmg} damage. ")
                 turn=False
             elif action=="CHECK":
                 Enemies.check(Encounter)
                 turn=False
-            elif action=="Items":
+            elif action=="ITEMS":
                 turn=False
             else:
                 turn=True
