@@ -1,16 +1,28 @@
 from fallen_human import Chara
-class enemies:
+import random
+class Enemies:
     def __init__(self,name,hp,at,df,xpamt,g):
+        self.name=name
         self.hp=hp
         self.at=at
         self.df=df
         self.xpamt=xpamt
         self.g=g
-        self.name=name
-    def getdamaged():
-        self.hp-=Chara.at
-    def attackchara():
-        Chara.hp-=self.at
+    def hplost(self,dmg):
+        self.hp-=dmg
+        print(f"{self.name} has taken {dmg} damage.")
+    def fight(self,opponent):
+        r=random.randint(0,2)
+        self.damage=round((self.at-opponent+r)*r)
+    def check(self):
+        print(f"{self.name}: {self.at} Attack {self.df} Defense")
+RuinsEnemiesList=["FirstFroggit","OtherFroggits","Whimsun","Moldsmal","Vegetoid","Migosp","Loox","Napstablook","Toriel"]
+SnowdinEnemiesList=["Snowdrake","Chilldrake","Ice Cap","Doggo","Lesser Dog","Jerry","Dogamy and Dogaresa","Gyftrot","Glyde","Greater Dog","papaya man"]
+WaterfallEnemiesList=["Aaron","Woshua","Moldsmal","Moldsbygg","Shyren","Monster Kid","fish"]
+HotlandEnemiesList=["Vulcan","Tsunderplane","Pyrope","Royal Guards","spider"]
+CoreEnemiesList=["Madjick","Knight Knight","Final Froggit","Whimsalot","Astigmatism","mtt neo"]
+NewHomeEnemiesList=["brother of papaya","asgore"]
+YellowBossesList=["Ceroba Ketsukane","Martlet","Marlet","Axis","Dalv","Decibat","YellowAsgore"]
 RuinsEnemies={
     "FirstFroggit":{
         "name":"Froggit",
@@ -224,14 +236,6 @@ WaterfallEnemies={
         "xpamt":52,
         "g":25,
     },
-    "Mad Dummy":{
-        "name":"Mad Dummy",
-        "hp":300,
-        "at":7,
-        "df":-40,
-        "xpamt":0,
-        "g":0,
-    },
     "fish":{
         "name":"Undyne",
         "hp":23000,
@@ -400,4 +404,12 @@ YellowBosses={
         "xpamt":7,
         "g":8,
     },
+    "YellowAsgore":{
+        "name":"Asgore",
+        "hp":1,
+        "at":0,
+        "df":-9999,
+        "xpamt":0,
+        "g":0
+    }
 }
