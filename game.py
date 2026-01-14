@@ -52,12 +52,14 @@ while mysteryman!=True:
        mysteryman=True
 human=Chara(name)
 Chara.levelup(human)
+foodlist=["bandage","monstercandy","spiderdonut","spidercider"]
 while ruinsencounter<21:
     r=random.randint(1,6)
     enemyalive=True
+    Encounter=Enemies(RuinsEnemies[RuinsEnemiesList[r]]["name"],RuinsEnemies[RuinsEnemiesList[r]]["hp"],RuinsEnemies[RuinsEnemiesList[r]]["at"],RuinsEnemies[RuinsEnemiesList[r]]["df"],RuinsEnemies[RuinsEnemiesList[r]]["xpamt"],RuinsEnemies[RuinsEnemiesList[r]]["g"])
     while enemyalive==True and human.hp>0:
-        Encounter=Enemies(RuinsEnemies[RuinsEnemiesList[r]]["name"],RuinsEnemies[RuinsEnemiesList[r]]["hp"],RuinsEnemies[RuinsEnemiesList[r]]["at"],RuinsEnemies[RuinsEnemiesList[r]]["df"],RuinsEnemies[RuinsEnemiesList[r]]["xpamt"],RuinsEnemies[RuinsEnemiesList[r]]["g"])
-        print(RuinsEnemies[RuinsEnemiesList[r]]["name"])
+        print(f"{RuinsEnemies[RuinsEnemiesList[r]]["name"]}: {Encounter.hp}")
+        print(f"{human.name}: {human.hp}/{human.maxhp}")
         turn=True
         while turn==True:
             action=(input("Fight     Check     Items ")).upper()
@@ -70,17 +72,22 @@ while ruinsencounter<21:
                 turn=False
             elif action=="ITEMS":
                 turn=False
-                print("not implemented yet")
+                r=random.randint(0,3)
+                Chara.hpgain(human,food[foodlist[r]]["healing"])
             else:
                 turn=True
+        if human.hp<=0:
+            print(f"You died. You killed {ruinsencounter} enemies.")
+            breakpoint
         if Encounter.hp<=0:
             enemyalive=False
             Chara.xpgain(human,Encounter.xpamt)
             Chara.levelup(human)
+            human.hp=human.maxhp
+            breakpoint
         else:
             enemyalive=True
             Enemies.fight(Encounter,human.df)
             Chara.hplost(human,Encounter.damage)
-            print(human.hp,Encounter.hp)
     ruinsencounter+=1
 

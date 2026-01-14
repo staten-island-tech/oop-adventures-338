@@ -36,6 +36,7 @@ class Chara:
         self.G+=gold
     def items(self,items):
         for i in items:
+            i.append(self.items)
             print(f"You have {i}.")
     def levelup(self):
         if self.xp==0:
