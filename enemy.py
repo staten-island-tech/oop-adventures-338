@@ -12,7 +12,7 @@ class Enemies:
         self.hp-=dmg
         print(f"{self.name} has taken {dmg} damage.")
     def fight(self,opponent):
-        r=random.randint(0,2)
+        r=random.randint(1,2)
         self.damage=round((self.at-opponent+r)*r)
     def check(self):
         print(f"{self.name}: {self.at} Attack {self.df} Defense")

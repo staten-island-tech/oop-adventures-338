@@ -120,7 +120,7 @@ weapons={
     "stick" : {
         "name": "Stick",
         "description": "Its bark is worse than its bite.",
-        "at": 0},
+        "at": 1},
     "toyknife" : {
         "name": "Toy Knife",
         "description": "Made of plastic. A rarity nowadays.",

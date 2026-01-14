@@ -51,28 +51,36 @@ while mysteryman!=True:
     else:
        mysteryman=True
 human=Chara(name)
+Chara.levelup(human)
 while ruinsencounter<21:
     r=random.randint(1,6)
     enemyalive=True
-    while enemyalive==True:
+    while enemyalive==True and human.hp>0:
         Encounter=Enemies(RuinsEnemies[RuinsEnemiesList[r]]["name"],RuinsEnemies[RuinsEnemiesList[r]]["hp"],RuinsEnemies[RuinsEnemiesList[r]]["at"],RuinsEnemies[RuinsEnemiesList[r]]["df"],RuinsEnemies[RuinsEnemiesList[r]]["xpamt"],RuinsEnemies[RuinsEnemiesList[r]]["g"])
         print(RuinsEnemies[RuinsEnemiesList[r]]["name"])
-        action=(input("Fight     Check     Items ")).upper()
         turn=True
         while turn==True:
+            action=(input("Fight     Check     Items ")).upper()
             if action=="FIGHT":
-                dmg=Chara.fight(human,weapons["stick"]["at"],Encounter.df)
-                Enemies.hplost(Encounter,dmg)
-                print(f"You dealt {dmg} damage. ")
+                Chara.fight(human,weapons["stick"]["at"],Encounter.df)
+                Enemies.hplost(Encounter,human.damage)
                 turn=False
             elif action=="CHECK":
                 Enemies.check(Encounter)
                 turn=False
             elif action=="ITEMS":
                 turn=False
+                print("not implemented yet")
             else:
                 turn=True
         if Encounter.hp<=0:
             enemyalive=False
+            Chara.xpgain(human,Encounter.xpamt)
+            Chara.levelup(human)
+        else:
+            enemyalive=True
+            Enemies.fight(Encounter,human.df)
+            Chara.hplost(human,Encounter.damage)
+            print(human.hp,Encounter.hp)
     ruinsencounter+=1
 

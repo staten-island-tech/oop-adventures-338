@@ -9,6 +9,7 @@ class Chara:
         self.at=0
         self.df=0
         self.G=0
+        self.items=[]
     def menu(self):
         print(self.name)
         print(f"{self.hp}/{self.maxhp} HP")
@@ -19,20 +20,23 @@ class Chara:
     def hplost(self,dmg):
         self.hp-=dmg
         print(f"{self.name} has taken {dmg} damage.")
-        if self.hp<0:
-            self.hp=0
     def hpgain(self,heal):
         self.hp+=heal
         if self.hp>self.maxhp:
             self.hp=self.maxhp
         print(f"{self.name} has recover {heal} health.")
     def fight(self,weapon,opponent):
-        r=random.randint(0,2)
+        r=random.randint(1,3)
         self.damage=round((weapon+self.at-opponent+r)*r)
+        if self.damage<0:
+            self.damage=0
     def xpgain(self,exp):
         self.xp+=exp
     def G(self,gold):
         self.G+=gold
+    def items(self,items):
+        for i in items:
+            print(f"You have {i}.")
     def levelup(self):
         if self.xp==0:
             self.love=1
@@ -77,7 +81,6 @@ class Chara:
         if self.love==20:
             self.maxhp=99
             self.at=999999999999999999999999999999999999999999999
-        else:
-            self.maxhp=16+(4*self.love)
-            self.at=-2+(2*self.love)
-            self.df=round((self.love-1)/4)
+        self.maxhp=16+(4*self.love)
+        self.at=2+(2*self.love)
+        self.df=round((self.love-1)/4)
