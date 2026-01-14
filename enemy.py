@@ -11,9 +11,9 @@ class Enemies:
     def hplost(self,dmg):
         self.hp-=dmg
         print(f"{self.name} has taken {dmg} damage.")
-    def fight(self,opponent):
-        r=random.randint(1,2)
-        self.damage=round((self.at-opponent+r)*r)
+    def fight(self,opponent,opponentdf):
+        r=random.randint(1,3)
+        self.damage=round(self.at-opponent-opponentdf+r)
     def check(self):
         print(f"{self.name}: {self.at} Attack {self.df} Defense")
 RuinsEnemiesList=["FirstFroggit","OtherFroggits","Whimsun","Moldsmal","Vegetoid","Migosp","Loox","Napstablook","Toriel"]

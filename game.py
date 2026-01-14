@@ -19,13 +19,6 @@ from enemy import CoreEnemiesList
 from enemy import NewHomeEnemiesList
 from enemy import YellowBossesList
 
-class Actions:
-    def __init__(self,name):
-        self.equipw=food["stick"]["at"]
-        self.equipa=weapons["bandage"]["df"]
-        self.items=[""]
-        self.damage=0
-
 mysteryman=False
 turn=0
 ruinsencounter=0
@@ -59,7 +52,7 @@ while ruinsencounter<21:
     Encounter=Enemies(RuinsEnemies[RuinsEnemiesList[r]]["name"],RuinsEnemies[RuinsEnemiesList[r]]["hp"],RuinsEnemies[RuinsEnemiesList[r]]["at"],RuinsEnemies[RuinsEnemiesList[r]]["df"],RuinsEnemies[RuinsEnemiesList[r]]["xpamt"],RuinsEnemies[RuinsEnemiesList[r]]["g"])
     while enemyalive==True and human.hp>0:
         print(f"{RuinsEnemies[RuinsEnemiesList[r]]["name"]}: {Encounter.hp}")
-        print(f"{human.name}: {human.hp}/{human.maxhp}")
+        print(f"{human.name}: LV {human.love} {human.hp}/{human.maxhp}")
         turn=True
         while turn==True:
             action=(input("Fight     Check     Items ")).upper()
@@ -84,10 +77,11 @@ while ruinsencounter<21:
             Chara.xpgain(human,Encounter.xpamt)
             Chara.levelup(human)
             human.hp=human.maxhp
+            print(f"You have gained {Encounter.xpamt} exp.")
             breakpoint
         else:
             enemyalive=True
-            Enemies.fight(Encounter,human.df)
+            Enemies.fight(Encounter,human.df,armor["bandage"]["df"])
             Chara.hplost(human,Encounter.damage)
     ruinsencounter+=1
 
