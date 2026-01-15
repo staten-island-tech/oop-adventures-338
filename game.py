@@ -1,23 +1,14 @@
 import random
-from fallen_human import Chara
-from item import food
-from item import weapons
-from item import armor
-from enemy import Enemies
-from enemy import RuinsEnemies
-from enemy import SnowdinEnemies
-from enemy import WaterfallEnemies
-from enemy import HotlandEnemies
-from enemy import CoreEnemies
-from enemy import NewHomeEnemies
-from enemy import YellowBosses
-from enemy import RuinsEnemiesList
-from enemy import SnowdinEnemiesList
-from enemy import WaterfallEnemiesList
-from enemy import HotlandEnemiesList
-from enemy import CoreEnemiesList
-from enemy import NewHomeEnemiesList
-from enemy import YellowBossesList
+from fallen_human import *
+from item import *
+from enemy import *
+
+class Actions:
+    def __init__(self,name):
+        self.equipw=food["stick"]["at"]
+        self.equipa=weapons["bandage"]["df"]
+        self.items=[""]
+        self.damage=0
 
 mysteryman=False
 turn=0
@@ -39,20 +30,21 @@ while mysteryman!=True:
     elif name=="PAPYRU" or name=="PAPAYA":
         print("I'LL ALLOW IT!!!!")
         mysteryman=True
+    elif name=="PAPYRUS":
+        print("THATS MY NAME HUMAN!")
     elif name=="GASTER":
         mysteryman=False
     else:
        mysteryman=True
 human=Chara(name)
 Chara.levelup(human)
-foodlist=["bandage","monstercandy","spiderdonut","spidercider"]
 while ruinsencounter<21:
     r=random.randint(1,6)
     enemyalive=True
     Encounter=Enemies(RuinsEnemies[RuinsEnemiesList[r]]["name"],RuinsEnemies[RuinsEnemiesList[r]]["hp"],RuinsEnemies[RuinsEnemiesList[r]]["at"],RuinsEnemies[RuinsEnemiesList[r]]["df"],RuinsEnemies[RuinsEnemiesList[r]]["xpamt"],RuinsEnemies[RuinsEnemiesList[r]]["g"])
     while enemyalive==True and human.hp>0:
-        print(f"{RuinsEnemies[RuinsEnemiesList[r]]["name"]}: {Encounter.hp}")
-        print(f"{human.name}: LV {human.love} {human.hp}/{human.maxhp}")
+        print(f"{RuinsEnemies[RuinsEnemiesList[r]]["name"]} ({Encounter.hp})")
+        print(f"{human.name} ({human.hp}/{human.maxhp})")
         turn=True
         while turn==True:
             action=(input("Fight     Check     Items ")).upper()
@@ -65,23 +57,16 @@ while ruinsencounter<21:
                 turn=False
             elif action=="ITEMS":
                 turn=False
-                r=random.randint(0,3)
-                Chara.hpgain(human,food[foodlist[r]]["healing"])
+                print("not implemented yet")
             else:
                 turn=True
-        if human.hp<=0:
-            print(f"You died. You killed {ruinsencounter} enemies.")
-            breakpoint
         if Encounter.hp<=0:
             enemyalive=False
             Chara.xpgain(human,Encounter.xpamt)
             Chara.levelup(human)
-            human.hp=human.maxhp
-            print(f"You have gained {Encounter.xpamt} exp.")
-            breakpoint
         else:
             enemyalive=True
-            Enemies.fight(Encounter,human.df,armor["bandage"]["df"])
+            Enemies.fight(Encounter,human.df)
             Chara.hplost(human,Encounter.damage)
     ruinsencounter+=1
 
