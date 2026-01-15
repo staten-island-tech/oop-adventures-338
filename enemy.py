@@ -1,4 +1,3 @@
-from fallen_human import Chara
 import random
 class Enemies:
     def __init__(self,name,hp,at,df,xpamt,g):

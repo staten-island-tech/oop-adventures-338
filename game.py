@@ -3,21 +3,7 @@ from fallen_human import Chara
 from item import food
 from item import weapons
 from item import armor
-from enemy import Enemies
-from enemy import RuinsEnemies
-from enemy import SnowdinEnemies
-from enemy import WaterfallEnemies
-from enemy import HotlandEnemies
-from enemy import CoreEnemies
-from enemy import NewHomeEnemies
-from enemy import YellowBosses
-from enemy import RuinsEnemiesList
-from enemy import SnowdinEnemiesList
-from enemy import WaterfallEnemiesList
-from enemy import HotlandEnemiesList
-from enemy import CoreEnemiesList
-from enemy import NewHomeEnemiesList
-from enemy import YellowBossesList
+from enemy import *
 
 mysteryman=False
 turn=0
